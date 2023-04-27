@@ -3,7 +3,7 @@ name: build-native-image
 on: [push]
 
 jobs:
-  native-image-compile-on-host:
+  native-image-build-on-host:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
@@ -38,7 +38,7 @@ jobs:
     - name: Run GraalVM Native Image compilation of Spring Boot App (Maven version instead of ./compile.sh)
       run: |
         source "$HOME/.sdkman/bin/sdkman-init.sh"
-        mvn -Pnative native:compile
+        mvn -Pnative spring-boot:build-image
 
 #   native-image-compile-in-docker:
 #     runs-on: ubuntu-latest
