@@ -1,0 +1,21 @@
+version: "3.9"
+
+services:
+
+  demo_env_app:
+    image: blackyv75/demo-env:0.0.1-SNAPSHOT
+    container_name: demo_env_app
+    restart: always
+    ports:
+      - "8080:8080"
+    networks:
+      demo_env_app_network:
+        ipv4_address: 172.20.0.3
+    env_file:
+      - demo_env_file.env
+
+networks:
+  demo_env_app_network:
+    ipam:
+      config:
+        - subnet: 172.20.0.0/24
