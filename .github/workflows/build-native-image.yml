@@ -3,7 +3,7 @@ name: build-native-image
 on: [push]
 
 jobs:
-  native-image-build-on-host:
+  native-image-build-push:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
@@ -40,12 +40,7 @@ jobs:
         source "$HOME/.sdkman/bin/sdkman-init.sh"
         mvn -Pnative spring-boot:build-image
 
-  native-image-push-to-dockerhub:
-     runs-on: ubuntu-latest
-     steps:
-       - uses: actions/checkout@v3
-
-       - name: Push to Docker Hub
-         run: |
-          docker login -u blackyv75 --password-stdin <<<'dckr_pat_IBB-y_HC0e0QGlAXbind-gIKT6k'
-          docker push blackyv75/demo-env:0.0.1
+    - name: Push to Docker Hub
+      run: |
+        docker login -u blackyv75 --password-stdin <<<'dckr_pat_IBB-y_HC0e0QGlAXbind-gIKT6k'
+        docker push blackyv75/demo-env:0.0.1
