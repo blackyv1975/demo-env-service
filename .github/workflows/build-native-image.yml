@@ -45,21 +45,7 @@ jobs:
      steps:
        - uses: actions/checkout@v3
 
-#       - name: Login into Heroku Container Registry first, so that we can push our Image later
-#         run: echo ${{ secrets.DOCKER_PASSWORD }} | docker login -u ${{ secrets.DOCKER_USERNAME }} --password-stdin registry.heroku.com
-#
-#       - name: Compile Native Image using Docker
-#         run: docker build . --tag=registry.heroku.com/spring-boot-graal/web
-#
-#       - name: Push to Heroku Container Registry
-#         run: docker push registry.heroku.com/spring-boot-graal/web
-#
-#       - name: Release Dockerized Native Spring Boot App on Heroku
-#         run: ./heroku-release.sh spring-boot-graal
-
        - name: Push to Docker Hub
          run: |
-#           echo ${{ secrets.DOCKER_HUB_TOKEN }} | docker login -u ${{ secrets.DOCKER_HUB_USERNAME }} --password-stdin
-#           docker tag registry.heroku.com/spring-boot-graal/web jonashackt/spring-boot-graalvm:latest
           docker login -u blackyv75 --password-stdin <<<'dckr_pat_IBB-y_HC0e0QGlAXbind-gIKT6k'
           docker push blackyv75/demo-env:0.0.1
