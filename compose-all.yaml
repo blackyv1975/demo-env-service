@@ -3,7 +3,7 @@ version: "3.9"
 services:
 
   demo_env_app:
-    image: blackyv75/demo-env:0.0.1-SNAPSHOT
+    image: blackyv75/demo-env:0.0.1
     container_name: demo_env_app
     restart: always
     ports:

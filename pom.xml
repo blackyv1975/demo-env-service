@@ -76,7 +76,7 @@
                     <verbose>true</verbose>
                     <images>
                         <image>
-                            <name>demo</name>
+                            <name>demo-env</name>
                             <build>
                                 <assembly>
                                     <descriptorRef>artifact</descriptorRef>
