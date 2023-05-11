@@ -58,6 +58,7 @@
                     <image>
                         <name>blackyv75/demo-env:0.0.1</name>
 <!--                        <builder>dashaun/builder:20230204</builder>-->
+
                         <builder>paketobuildpacks/builder:tiny</builder>
                     </image>
                     <excludes>
